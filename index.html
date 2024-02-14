@@ -653,6 +653,154 @@ aspect-ratio: 1/1;
 
 }
 
+/*mobile*/
+.mobile-over
+{
+	overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+	width: 100%;
+	position: relative;
+}
+
+
+.mobile-overlay {
+  position: fixed;
+  z-index: -1;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: all 0.2s ease-in;
+}
+.mobile-overlay.show1
+{
+  z-index: 9990;
+  opacity: 1;
+}
+.mobile-panel
+{
+  position: fixed;
+  z-index: 9999;
+  height: 100%;
+  width: 80vw;
+  top:0px;
+  right: -80vw;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+  padding: 1rem;
+}
+.mobile-panel.show2
+{
+ right: 0vw;
+}
+
+.mobile-panel-close
+{
+  position: absolute;
+  z-index: 100;
+  right:0.2rem;
+  top:1rem;
+  cursor: pointer;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+@media screen and (min-width:821px) {
+  .mobile-overlay,.mobile-panel
+  {
+    display: none!important;
+    z-index: -1!important;
+  }
+
+}
+@media screen and (min-width:768px) and (max-width:1023.9px) and (orientation:landscape) {
+  header #header-nav {
+    height: 4.1rem !important
+  }
+
+  .mobile-overlay {
+    display: flex
+  }
+  .mobile-panel
+  {
+    width: 50vw;
+    right:-50vw
+  }
+}
+.mobie-menu
+{
+  position: relative;
+  width: 100%;
+  overflow-y: auto;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+.mobie-menu ul
+{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap:0px;
+}
+.mobie-menu li > a
+{
+  font-weight: normal;
+  padding: 0.5rem 0rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  font-size: 1.3rem;
+  color:#333;
+  line-height: 1.1;
+  text-transform: capitalize;
+}
+.mobie-menu li.on  > a
+{
+  font-weight: bold;
+  color: #000;
+  text-transform: uppercase;
+}
+.mobie-menu   .submenu-m
+{
+
+  display: none;
+  border:1px solid var(--good-border);
+  background-color: #fff;
+  padding: 1rem;
+
+}
+.mobie-menu   .submenu-m > div
+{
+display: flex;
+flex-direction: column!important;
+padding: 0.1rem 0;
+}
+.mobie-menu   .submenu-m > div a
+{
+  height: 2.4rem;
+  display: flex;
+  width: 100%;
+  padding: 0 1rem;
+  align-items: center;
+
+}
+.mobie-menu   .submenu-m > div a.on
+{
+  color:var(--color-focus);
+  font-weight: bold;
+  background-color: var(--color-end);
+}
+
 
 </style>
 </head>
